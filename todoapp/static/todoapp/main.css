@@ -1,0 +1,18 @@
+body{
+  background-color: #638CB8;
+}
+.card{
+  width:750px;
+  margin:50px auto;
+}
+.two{
+  height: 80px;
+  background-color: #906abd;
+  border-radius: 10px;
+  color:white;
+}
+.btn{
+  color:white;
+  font-size: 18px;
+
+}

@@ -1,0 +1,32 @@
+
+{% extends 'todoapp/base.html' %}
+{% load static%}
+{% block base%}
+{% load crispy_forms_tags %}
+
+<div class="card">
+    <div class="card-body">
+      <form class=""  method="POST">
+        {%csrf_token%}
+        {{form.title|as_crispy_field}}
+        <button type="submit" class="btn btn-info btn-lg btn-block">Submit</button>
+
+      </form>
+
+      {% for list in lists %}
+    <div class="card-body two  mt-2">
+      <a href="{% url 'update' list.id %}"   class='btn btn-info btn-sm mt-2'>Update</a>
+
+      <a href="{% url 'delete' list.id %}" class='btn btn-warning btn-sm mt-2'>Delete</a>
+      {% if list.complete %}
+       <strike>{{list.title}}</strike>
+       {%else%}
+       <span>{{list.title}}</span>
+       {%endif%}
+    </div>
+    {% endfor%}
+</div>
+
+
+  </div>
+{% endblock %}

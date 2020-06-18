@@ -1,0 +1,25 @@
+
+
+{% extends 'todoapp/base.html' %}
+{% load static%}
+{% block base%}
+{% load crispy_forms_tags %}
+
+<div class="card">
+    <div class="card-body">
+      <h1>Are you sure you want to delete "{{tasks.title}}" </h1>
+
+      <form class=""  method="POST">
+        {%csrf_token%}
+
+        <a href="/" class='btn btn-success form mt-2'>Cancel</a>
+        <input type="submit" name="" value="Delete" class='btn btn-danger form mt-2'>
+
+      </form>
+
+
+</div>
+
+
+  </div>
+{% endblock %}

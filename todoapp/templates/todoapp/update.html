@@ -1,0 +1,20 @@
+         {% extends 'todoapp/base.html' %}
+         {% load static%}
+         {% block base%}
+         {% load crispy_forms_tags %}
+
+         <div class="card">
+             <div class="card-body">
+               <form class=""  method="POST">
+                 {%csrf_token%}
+                 {{form|crispy}}
+                 <input type="submit" name="" value="Submit" class='btn btn-info form mt-2'>
+
+               </form>
+
+
+         </div>
+
+
+           </div>
+         {% endblock %}
